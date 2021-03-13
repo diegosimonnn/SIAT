@@ -7,9 +7,657 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+      
+body {
+    background-color: #F1F2F3;
+}
+
+.container-fluid,
+.container {
+    max-width: 1200px;
+}
+
+.card-container {
+    padding: 100px 0px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.profile-card-1 {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-image: url(../img/profile-bg-1.jpg);
+    background-position: center;
+    padding-top: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.profile-card-1 .profile-content {
+    position: relative;
+    background-color: #FFF;
+    padding: 70px 20px 20px 20px;
+    text-align: center;
+}
+
+.profile-card-1 .profile-img {
+    position: absolute;
+    height: 100px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    top: -50px;
+    transition: all 0.25s linear;
+    transform-style: preserve-3d;
+}
+
+.profile-card-1 .profile-img img {
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card-1 .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #021830;
+}
+
+.profile-card-1 .profile-address {
+    color: #777;
+    font-size: 12px;
+    margin: 0px 0px 15px 0px;
+}
+
+.profile-card-1 .profile-description {
+    font-size: 13px;
+    padding: 5px 10px;
+    color: #777;
+}
+
+.profile-card-1 .profile-icons .fa {
+    margin: 5px;
+    color: #777;
+}
+
+.profile-card-1:hover {
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card-1:hover .profile-img {
+    transform: rotateY(180deg);
+}
+
+.profile-card-2 {
+    max-width: 300px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.profile-card-2 img {
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-name {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    font-size: 30px;
+    color: #FFF;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #FFF;
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-username {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: #FFF;
+    font-size: 13px;
+    transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons .fa {
+    margin: 5px;
+}
+
+.profile-card-2:hover img {
+    filter: grayscale(100%);
+}
+
+.profile-card-2:hover .profile-name {
+    bottom: 80px;
+}
+
+.profile-card-2:hover .profile-username {
+    bottom: 60px;
+}
+
+.profile-card-2:hover .profile-icons {
+    right: 40px;
+}
+
+.profile-card-3 {
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    padding: 25px 15px;
+}
+
+.profile-card-3 .profile-name {
+    font-weight: bold;
+    color: #21304e;
+}
+
+.profile-card-3 .profile-location {
+    color: #999;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.profile-card-3 img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    margin: 10px auto;
+    border-radius: 50%;
+    transition: all linear 0.25s;
+}
+
+.profile-card-3 .profile-description {
+    font-size: 13px;
+    color: #777;
+    padding: 10px;
+}
+
+.profile-card-3 .profile-icons {
+    margin: 15px 0px;
+}
+
+.profile-card-3 .profile-icons .fa {
+    color: #fe455a;
+    margin: 0px 5px;
+}
+
+.profile-card-3:hover img {
+    height: 110px;
+    width: 110px;
+    margin: 5px auto;
+}
+
+.profile-card-4 {
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.profile-card-4 img {
+    transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+    position: relative;
+    padding: 15px;
+    background-color: #FFF;
+}
+
+.profile-card-4 .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: -70px;
+    color: #FFF;
+    font-size: 17px;
+}
+
+.profile-card-4 .profile-name p {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.profile-card-4 .profile-description {
+    color: #777;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.profile-card-4 .profile-overview {
+    padding: 15px 0px;
+}
+
+.profile-card-4 .profile-overview p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+}
+
+.profile-card-4 .profile-overview h4 {
+    color: #273751;
+    font-weight: bold;
+}
+
+.profile-card-4 .profile-content::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background-color: #FFF;
+    z-index: 0;
+    transform: skewY(3deg);
+}
+
+.profile-card-4:hover img {
+    transform: rotate(5deg) scale(1.1, 1.1);
+    filter: brightness(110%);
+}
+
+.profile-card-5 {
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    padding: 50px 15px 25px 15px;
+}
+
+.profile-card-5 img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    margin: 10px auto;
+    border-radius: 50%;
+    transition: all linear 0.25s;
+    position: relative;
+}
+
+.profile-card-5::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: 0px;
+    left: 0px;
+    height: 170px;
+    background-color: #4fb96e;
+    transform: skewY(-20deg);
+}
+
+.profile-card-5 .profile-name {
+    padding-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-card-5 .profile-designation {
+    font-size: 13px;
+    color: #777;
+}
+
+.profile-card-3 .profile-location {
+    color: #999;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.profile-card-5 .profile-description {
+    font-size: 13px;
+    color: #777;
+    padding: 10px;
+}
+
+.profile-card-5 .profile-overview {
+    padding: 15px 0px;
+}
+
+.profile-card-5 .profile-overview p {
+    color: #777;
+    font-size: 13px;
+}
+
+.profile-card-5 .profile-overview h2 {
+    font-weight: bold;
+    color: #1e2832;
+}
+
+.profile-card-5 .profile-icons .fa {
+    margin: 7px;
+    color: #4fb96e;
+}
+
+.profile-card-5:hover img {
+    transform: rotate(-5deg);
+}
+
+.profile-card-6 {
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.profile-card-6 img {
+    transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-name {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFF;
+    padding: 15px 20px;
+    background: linear-gradient(140deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0) 50%);
+    transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-position {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.4);
+    left: 30px;
+    top: 100px;
+    transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-overview {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0));
+    color: #FFF;
+    padding: 50px 0px 20px 0px;
+    transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-overview h3 {
+    font-weight: bold;
+}
+
+.profile-card-6 .profile-overview p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-card-6:hover img {
+    filter: brightness(80%);
+}
+
+.profile-card-6:hover .profile-name {
+    padding-left: 25px;
+    padding-top: 20px;
+}
+
+.profile-card-6:hover .profile-position {
+    left: 40px;
+}
+
+.profile-card-6:hover .profile-overview {
+    padding-bottom: 25px;
+}
+
+.profile-card-7 {
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.profile-card-7 .profile-content {
+    padding: 60px 30px 30px 30px;
+    background-color: #FFF;
+    position: relative;
+}
+
+.profile-card-7 .profile-content img {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    top: -40px;
+    border: 5px solid #FFF;
+}
+
+.profile-card-7 .profile-content .profile-name {
+    position: absolute;
+    font-size: 17px;
+    font-weight: bold;
+    top: -35px;
+    left: 125px;
+    color: #FFF;
+}
+
+.profile-card-7 .profile-overview {
+    padding: 5px 0px;
+}
+
+.profile-card-7 .profile-overview p {
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.profile-card-7 .profile-overview h5 {
+    color: #142437;
+    font-weight: bold;
+}
+
+.profile-card-8 {
+    background: linear-gradient(#09121c, #36445a);
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 0.25s linear;
+}
+
+.profile-card-8 .profile-name {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 25px;
+    color: #58d683;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.profile-card-8 .profile-designation {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.profile-card-8 .profile-icons {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 80px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-card-8 .profile-icons .fa {
+    margin: 5px;
+}
+
+.profile-card-8:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.profile-card-9 {
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    padding: 30px 15px;
+    background-color: #FFF;
+    transition: all 0.25s linear;
+}
+
+.profile-card-9 img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.profile-card-9 .profile-name {
+    font-size: 15px;
+    color: #3249b9;
+    font-weight: 600;
+}
+
+.profile-card-9 .profile-designation {
+    font-size: 13px;
+    color: #777;
+}
+
+.profile-card-9 .profile-description {
+    padding: 10px;
+    font-size: 13px;
+    color: #777;
+    margin: 15px 0px;
+    background-color: #F1F2F3;
+    border-radius: 5px;
+}
+
+.profile-card-9 a {
+    padding: 10px 15px;
+    background-color: #3249b9;
+    color: #FFF;
+    font-size: 11px;
+    border-radius: 25px;
+}
+
+.profile-card-9:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.profile-card-10 {
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    padding: 30px 15px;
+    background-color: #1f2124;
+    color: #EEE;
+}
+
+.profile-card-10 img {
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    box-shadow: 0px 0px 0px 2px #64c17b;
+    transition: all 0.25s linear;
+}
+
+.profile-card-10 .profile-name {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.profile-card-10 .profile-location {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.profile-card-10 .profile-description {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.profile-card-10 .profile-icons .fa {
+    color: #ffc75e;
+    margin: 10px;
+}
+
+.profile-card-10:hover img {
+    transform: scale(1.1);
+}
+      .redes img{
+        width: 8vh;
+        height: 8vh;
+      }
+      .redes p{
+        color: white;
+        font-size: 2vh;
+      }
+      .footer{
+            background-color: #052f6e;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5vh;
+          }
+          @media(max-width: 991px){
+            .footer{
+              padding: 20px 50px;
+              flex-direction: column-reverse;
+              text-align: center;
+            }
+          }
+    </style>
   </head>
-  <body>
+  <body style="background-color: #052f6e;">
 
     <div class="banner">
       <header>
@@ -19,11 +667,11 @@
           <i class="fas fa-ellipsis-h"></i>
         </label>
         <ul class="menu">
-          <li><a href="index.html" target="_blank">Home</a></li>
-          <li><a href="index.html#about" target="_blank">Acerca de nosotros</a></li>
-          <li><a href="index.html#servicios" target="_blank">Servicios</a></li>
-          <li><a href="index.html#equipo" target="_blank">Equipo</a></li>
-          <li><a href="index.html#" target="_blank">Contacto</a></li>
+          <li><a href="https://diegosimonnn.github.io/SIAT/index.html">Home</a></li>
+          <li><a href="https://diegosimonnn.github.io/SIAT/index.html#about">Acerca de nosotros</a></li>
+          <li><a href="https://diegosimonnn.github.io/SIAT/index.html#servicios">Servicios</a></li>
+          <li><a href="https://diegosimonnn.github.io/SIAT/index.html#equipo">Equipo</a></li>
+          <li><a href="https://diegosimonnn.github.io/SIAT/index.html#contacto" target="_blank">Contacto</a></li>
           <label for="chk" class="hide-menu-btn">
             <i style="color:white;"class="fas fa-times"></i>
           </label>
@@ -34,14 +682,14 @@
       </section>
       <img src="fotos/foto4.jpg" alt="">
       <div class="content">
-        <h2>Todo Comienza con la Organización</h2>
-        <h3 style="color:white;">
+        <h2 style="font-weight: 700; font-style: inherit; font-size: 4.5vh;">Todo Comienza con la Organización</h2>
+        <p style="color:white; font-size: 2.5vh; font-weight: 600;">
         S.A.I.T se encarga de organizar y gestionar las inscripciones a tus torneos de una forma autonoma y segura. No te tenes que ocupar de nada.
         <br> S.A.I.T se encarga de hacer todo por vos.
         <br>
         <br>
         Contratanos ahora.. 
-        </h3>
+        </p>
       </div>
     </div>
 
@@ -50,10 +698,11 @@
         <h2 class="heading" style="margin-bottom: 50px;">Acerca de nosotros</h2>
         <p class="text">
           S.A.I.T (Sistema Automatizado de Inscripciones de Torneos) es el primer sistema de inscripciones online para torneos de tenis de mesa 
-          que muestra listado de inscriptos y sembrados de zonas. 
+          que muestra listado de inscriptos y sembrados de zonas que se actualizan de forma constante. 
           <br>
-          Fue desarrollado con el fin de facilitar la gestion de inscripciones por parte de los organizadores de torneos, el mismo cumple 
-          con diversas caracteristicas como el seguimiento constante de los datos que se ingresan al sistema. 
+          Fue desarrollado con el fin de facilitar la gestion de inscripciones a de los organizadores de torneos. <br> El mismo cumple 
+          con diversas caracteristicas tales como el seguimiento constante de los datos que se ingresan al sistema, copias de seguridad de los datos y por ultimo
+          verificación de las inscripciones. 
           <br>
         </p>
       </div>
@@ -65,6 +714,9 @@
     <section id="servicios" class="services">
       <h2 class="heading">Nuestros servicios</h2>
       <p class="text">
+        El Sistema ofrece la automatizacion de las inscripciones con sus validaciones correspondientes. <br>
+        Muestra el listado de inscriptos actualizado las 24 hs y los sembrados de zonas que se van armando segun el listado de inscriptos. <br>
+        Y por ultimo posee un seguimiento personalizado las 24 hs del sistema en general y las inscripciones por cualquier inconveniente con los inscriptos. <br>
         Una vez contratado el servicio nos pondremos en contacto con usted para hacerle algunas preguntas acerca de su torneo y asi ya empezar a diseñar los formularios de inscripcion. 
         Este proceso tiene una duración de 2 dias habiles.
         <br>
@@ -96,42 +748,62 @@
 
     </section >
     
+    <section id="equipo">
 
+      <h2 class="heading text-center" style="margin-top: 15vh; margin-bottom: 5vh;">Equipo</h2>
+      <div class="container">
+        <div class="row justify-content-center text-center">
 
-    <div id="equipo" class = "about-wrapper">
-      <div class = "about-left">
-        <div class = "about-left-content">
-          <div>
-            <div class = "shadow">
-              <div class = "about-img">
-                <img src = "WhatsApp Image 2021-03-06 at 22.58.14.jpeg" alt = "about image">
+          <div class="col-md-4">
+              <div class="profile-card-6"><img src="avat.jpg" class="img img-responsive">
+                  <div class="profile-name">Diego
+                      <br>Simon</div>
+                  <div class="profile-position">Estudiante de Ingenieria en Sistemas</div>
+                  <div class="profile-overview">
+                      <div class="profile-overview">
+                          
+                      </div>
+                  </div>
               </div>
-            </div>
-
-            <h2 style="color: white;">Diego<br>Simón</h2>
-            <h3 style="color: white;">Estudiante<br>Ingenieria en Sistemas</h3>
           </div>
-
-          <ul class = "icons">
-            <li><i class = "fab fa-facebook-f"></i></li>
-            <li><i class = "fab fa-instagram"></i></li>
-          </ul>
+          <div class="col-md-4 align-self-center" style="padding: 0 6vh;">
+            <p class="text text-center" style="margin-top: 5vh;">
+              ¡Hola! Soy Diego Simón. Estudiante de Ingenieria en Sistemas. 
+              <br>
+              Decidí crear S.A.I.T para solucionar las problematicas que generaban las pre-inscripciones a torneos de forma manual.
+              <br>
+              Actualmente trabajo junto a un equipo de estudiantes y diseñadores que en conjunto buscamos la forma de mejorar el sistema para hacerlo lo mas seguro y eficaz posible.
+              <br>
+              Cualquier duda no dudes en consultarme y te responderé con mucho gusto.
+            </p>
+          </div>
+          
         </div>
       </div>
+    </section>
 
-      <div class = "about-right">
-        <h2 class="heading">Equipo</h2>
-
-        <div class = "about-para">
-          <p class="text">¡Hola! Soy Diego Simón. Estudiante de Ingenieria en Sistemas.</p>
-          <p class="text">Decidí crear S.A.I.T para solucionar las problematicas que generaban las pre-inscripciones a torneos de forma manual.</p>
-          <p class="text">Actualmente trabajo junto a un equipo de estudiantes y diseñadores que en conjunto buscamos la forma de mejorar el sistema para hacerlo lo mas seguro y eficaz posible.</p>
-          <p class="text">Cualquier duda no dudes en consultarme y te responderé con mucho gusto.</p>
-        </div>
+    <section id="contactos" class="container text-center" style="background-color: #052f6e;">
+      <h2 class="heading" style="margin-top: 15vh; margin-bottom: 3vh;">Contacto</h2>
+      <p class="text">Para contactarnos y contratar nuestros servicios puede hacerlo por cualquiera de nuestras redes sociales o por WhatsApp </p>
+      <div class="container-fluid" style="margin-top: 6vh; margin-bottom: 0vh;">
+        <div class="row justify-content-center" style= "margin-top:0vh; margin-right: 2vh;">
+          <div class="col-xl-4 text-center redes" style="color: white; padding: 0;">
+            <a href="https://www.facebook.com/Diego.Simon2398/"><img src="fotos/facebook_social_media_icon_127370.ico" alt=""><p>Facebook</p></a>
+          </div>
+          <div class="col-xl-4 text-center redes" style="color: white;">
+            <a href="https://wa.link/vclaj5"><img src="fotos/whatsapp_tile_logo_icon_169898.ico" alt=""><p>WhatsApp</p></a>
+          </div>
+          <div class="col-xl-4 text-center redes" style="color: white;">
+            <a href="https://www.instagram.com/diego_simonn/"><img src="fotos/instagram_social_media_icon_127363.ico" alt=""><p>Instagram</p></a>
+          </div>
+         </div>
       </div>
-    </div>
-    
-    
+    </section>
+
+    <section class="footer" style="margin-right: 3vh;">
+      <p class="text">Diseño y Desarrollo por Diego Simón</p>
+      <p class="text" style="font-size: 1.5vh;">© S.A.I.T 2021 | Todos los derechos reservados.</p>
+    </section>
 
 
     <script type="text/javascript">
